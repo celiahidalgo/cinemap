@@ -1,7 +1,6 @@
 const express = require('express');
 const router = express.Router();
 const axios = require("axios");
-const request = require("request");
 const fs = require("fs");
 const path = require("path");
 
@@ -45,6 +44,15 @@ router.get('/main', async function(req, res) {
   });
   
     saveOnDB(dataToSave);
+  });
+
+  router.get("/:id", async function(req, res) {
+    const param = req.params.id;  
+    const films = db.peliculas;
+    const film = films.find(function(data){ return data.id == param});
+    console.log(film);
+
+    res.render("detalle", { title: "cinemap | detalle", film});
   });
 
 module.exports = router;

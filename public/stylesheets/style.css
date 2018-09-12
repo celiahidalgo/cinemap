@@ -85,6 +85,21 @@ main.content {
   margin: 0 1rem;
 }
 
+/* DETALLE  */
+
+.detail {
+  padding: 3rem 10rem;
+  height: 300px;
+  overflow: hidden; 
+}
+
+.detail-cover {
+  width: 100%;
+}
+
+.info-film {
+  padding: 0 10rem;
+}
 
 /* NAVBAR */
 
