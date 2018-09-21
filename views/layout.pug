@@ -9,18 +9,29 @@ html
     <nav class="navbar is-dark accent-bottom" role="navigation" aria-label="main navigation">
       <div class="navbar-brand">
         a.navbar-item.nav-logo(href="/")
-          img(class="nav-logo is-24x24" src="images/logo.png" alt="cinemapp. Otro nuevo Netflix.")
+          img(class="nav-logo is-24x24" src="/images/logo.png" alt="cinemapp. Otro nuevo Netflix.")
           .navbar-item.site-title
             h1.thin cinemap
       </div>
       <div class="navbar-menu">
         .navbar-start
-          a(class="navbar-item pad-1" href="http://localhost:3000/main") Populares
-          a(class="navbar-item pad-1" href="#") Películas
-      </div>
+          a(class="navbar-item pad-1" href="http://localhost:3000/main") Películas
+          a(class="navbar-item pad-1" href="http://localhost:3000/series") Series
+        .navbar-start.search
+          <div class="navbar-item field has-addons">
+            form#search.search-box(action="/results", method="GET")
+              <div class="control">
+                <input id="search" class="input transparent" name="search" type="text" placeholder="Encuentra tu película">
+                <button type="submit" class="button search-btn transparent">
+                  i.fa.fa-search.has-text-white.icon.is-medium.search-i
+                </a>
+              </div>
+            </div>
+        </div>
     </nav>
 
         
       
 
     block content
+script(src="/javascripts/scripts.js")

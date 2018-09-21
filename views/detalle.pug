@@ -1,20 +1,24 @@
 extends layout
 
-block content
-    if film
-        .column.is-12
-            <div class="container detail is-fluid">
-                <img class="detail-cover" src="https://image.tmdb.org/t/p/w300#{film.poster_path}">
-            </div>
-        .column.is-12
-        <div class="container is-fluid info-film">
-            
-            <h1 class="title">
-                Primary #{film.title} 
-            </h1>
-            <h2 class="subtitle">
-                Primary #{film.release_date}
-            </h2>
-            p #{film.overview} 
-            
-                                
+block content 
+    .is-dark 
+        .container-detail
+            .columns
+                .column.is-6.detail.detail-img
+                    <div class="container  is-fluid">
+                        <img class="detail-cover" src="https://image.tmdb.org/t/p/w300#{film.poster_path}">
+                    </div>
+                .column.is-6.detail.detail-txt
+                    .container.info-film          
+                        <h1 class="title">
+                            Primary #{film.title} 
+                        </h1>
+                        <h2 class="subtitle">
+                            Primary #{film.release_date}
+                        </h2>
+                        p #{film.overview} 
+                .container    
+                    p Nota - #{film.vote_average} 
+                    .fa.fa-heart
+                        
+                                    

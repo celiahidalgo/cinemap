@@ -1,0 +1,34 @@
+extends layout
+
+block content
+    main.content
+        if pelis.length > 0
+            .columns.is-multiline
+                each item in pelis
+                    .column.is-3-tablet.is-one-third-desktop
+
+                        a(href!="http://localhost:3000/" + item.id)
+                            <div class="card">
+                                <div class="card-image">
+                                    <figure class="image">
+                                    <img src="https://image.tmdb.org/t/p/w300#{item.backdrop_path}">
+                                    </figure>
+                                </div>
+                                <div class="card-content">
+                                    <div class="media">
+                                        <div class="media-content">
+                                            <h3 class="title is-4">#{item.title}</h3>
+                                            <p class="date">#{item.release_date}</p>
+                                            <p class="description">#{item.overview}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                footer.card-footer
+                                    span.footer-icon
+                                        i.fa.fa-star.icon.is-medium
+                                        span #{item.rating}/5
+                                    span.footer-icon
+                                        i.fa.fa-heart.fa-lg.icon.is-medium.has-text-primary
+
+                            </div>
+
